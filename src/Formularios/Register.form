@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="Formularios.Register">
+  <grid id="27dc6" binding="Main_Register" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+    <margin top="0" left="0" bottom="0" right="0"/>
+    <constraints>
+      <xy x="20" y="20" width="500" height="449"/>
+    </constraints>
+    <properties>
+      <background color="-12828863"/>
+    </properties>
+    <border type="none"/>
+    <children>
+      <grid id="5bc1e" binding="Titulo_Panel" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="20" left="0" bottom="0" right="0"/>
+        <constraints>
+          <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-12828863"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="3b82f" class="javax.swing.JLabel" binding="RegistroTxt">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Corbel" size="28"/>
+              <foreground color="-1"/>
+              <text value="Registro"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="f664b" binding="registro_Panel" layout-manager="GridLayoutManager" row-count="6" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="20" left="20" bottom="0" right="20"/>
+        <constraints>
+          <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-12828863"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="26c4e" class="javax.swing.JLabel" binding="nombreTxt">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Corbel" size="14"/>
+              <foreground color="-1"/>
+              <text value="Nombre:"/>
+            </properties>
+          </component>
+          <component id="57ddb" class="javax.swing.JTextField" binding="reg_nombreTF">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-12671773"/>
+              <font name="Corbel" size="14"/>
+              <foreground color="-1"/>
+            </properties>
+          </component>
+          <component id="1db46" class="javax.swing.JLabel" binding="email_regTxt">
+            <constraints>
+              <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Corbel" size="14"/>
+              <foreground color="-1"/>
+              <text value="Email:"/>
+            </properties>
+          </component>
+          <component id="6174d" class="javax.swing.JLabel" binding="celularTxt">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Corbel" size="14"/>
+              <foreground color="-1"/>
+              <text value="Celular:"/>
+            </properties>
+          </component>
+          <component id="65b11" class="javax.swing.JLabel" binding="password_regTxt">
+            <constraints>
+              <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Corbel" size="14"/>
+              <foreground color="-1"/>
+              <text value="Password:"/>
+            </properties>
+          </component>
+          <component id="9cc8f" class="javax.swing.JLabel" binding="apellidoTxt">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Corbel" size="14"/>
+              <foreground color="-1"/>
+              <text value="Apellido:"/>
+            </properties>
+          </component>
+          <component id="c9a18" class="javax.swing.JTextField" binding="reg_apellidoTF">
+            <constraints>
+              <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-12671773"/>
+              <font name="Corbel" size="14"/>
+              <foreground color="-1"/>
+            </properties>
+          </component>
+          <component id="645f4" class="javax.swing.JTextField" binding="reg_mailTF">
+            <constraints>
+              <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-12671773"/>
+              <font name="Corbel" size="14"/>
+              <foreground color="-1"/>
+            </properties>
+          </component>
+          <component id="6720d" class="javax.swing.JTextField" binding="reg_celularTF">
+            <constraints>
+              <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-12671773"/>
+              <font name="Corbel" size="14"/>
+              <foreground color="-1"/>
+            </properties>
+          </component>
+          <component id="fdc5e" class="javax.swing.JPasswordField" binding="reg_passwordTF">
+            <constraints>
+              <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-12671773"/>
+              <font name="Corbel" size="14"/>
+              <foreground color="-1"/>
+            </properties>
+          </component>
+          <component id="dfb66" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="4" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <font name="Corbel" size="14"/>
+              <foreground color="-1"/>
+              <text value="Confirm Password:"/>
+            </properties>
+          </component>
+          <component id="281da" class="javax.swing.JPasswordField" binding="reg_confirm_passwordTF">
+            <constraints>
+              <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties>
+              <background color="-12671773"/>
+              <font name="Corbel" size="14"/>
+              <foreground color="-1"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+      <grid id="b6c79" binding="Botones_Reg_Panel" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+        <margin top="20" left="20" bottom="20" right="20"/>
+        <constraints>
+          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <background color="-12828863"/>
+        </properties>
+        <border type="none"/>
+        <children>
+          <component id="7e425" class="javax.swing.JButton" binding="volverBTN">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="2" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-12671773"/>
+              <font name="Corbel" size="14"/>
+              <foreground color="-1"/>
+              <icon value="images/regresar.png"/>
+              <text value="   Volver"/>
+            </properties>
+          </component>
+          <component id="47a87" class="javax.swing.JButton" binding="guardarBTN">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <background color="-12671773"/>
+              <font name="Corbel" size="14"/>
+              <foreground color="-1"/>
+              <icon value="images/guardar.png"/>
+              <text value="  Guardar"/>
+            </properties>
+          </component>
+        </children>
+      </grid>
+    </children>
+  </grid>
+</form>
