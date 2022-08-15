@@ -19,4 +19,21 @@ Implentando un Login, Registro y CRUD de productos
 
 ## 2. Funcionalidad
 
+### LOGIN 
++ `Iniciar Sesion` = Este boton podrá mandar errores si algun campo esta vacio, incompleto o incorrecto, Si el usuario existe abrira la siguiente pestaña
++ `Registrarse` =  Este boton redireccionará a la pestaña de registro
++ `Salir`= Al presionar el botón cierra el programa
+### REGISTER
++ `Volver` = Este botón podrá redireccionar a la pestaña login
++ `Guardar` = Este botón comprueba si todos los campos estan llenos, de lo contrario al pulsarlo salta un error, de igual forma, cuando las contraseñas no coinciden y también valida si el correo cumple con el formato de correo. Además compreueba si el usuario ya existe en la base de datos
+## CRUD
++ `Guardar` = Antes de pulsar el boton es necesario escribir todos los datos del producto, posteriormente al presionar el botón salta un aviso que el producto ha sido guardado correctamente y si existe algun error salta un aviso que dice "error al guardar producto"
++ `Modificar` = Primero es necesario marcar la celda de la tabla donde se desea modificar el producto, despues cambiar algun campo de este, una vez realizado esto presionar el botón. Saltará un aviso informando si se modifico el producto correctamente o si hubo algún error.
++ `Eliminar` = Antes de pulsar el boton es necesario seleccionar alguna celda de la tabla, posteriormente pulsar el botón que indicará un aviso si el producto se borro exitosamente o caso contrario si hubo algún error al borrar el producto
++ `Limpiar` = Si los datos estan llenos al presionar el botón limpia los datos de los campos
++ `Salir`= Este boton al ser presionado cierra la sesión y lo redirige a la pestaña del Login nuevamente
+
 ## 3. Complementos necesarios
+
++ Conector MySQL para JAVA: Este archivo .jar ayuda a crear la conexion con la base de datos
++ Xampp: ayuda a abrir los puertos para crear posterior crear la base de datos de manera local
