@@ -7,8 +7,8 @@ Implentando un Login, Registro y CRUD de productos
 
 ### Login
 
- <img width="400" alt="image" src="https://user-images.githubusercontent.com/85601974/184511242-1365abb8-28df-4074-8598-ba47d58e7c64.png">
- 
+ <img width="400" alt="image" src="https://user-images.githubusercontent.com/85601974/184793187-b4479dd7-5037-4747-9e9d-5f28646ef790.png">
+
  ### Register
 
  <img width="400" alt="image" src="https://user-images.githubusercontent.com/85601974/184511269-de6178af-b48f-49d5-aac5-a5694f842ee4.png">
