@@ -1,6 +1,5 @@
 package Formularios;
 
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -30,7 +29,7 @@ public class Login extends JFrame{
 
     public Login () {
         setContentPane(Main_Login);
-        setTitle("Register");
+        setTitle("Login");
         setSize(460,560);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
@@ -88,6 +87,7 @@ public class Login extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 Login.this.dispose();
                 Login.this.setVisible(false);
+                Login.this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
             }
         });
     }

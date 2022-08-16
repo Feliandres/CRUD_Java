@@ -25,6 +25,11 @@ public class Crud_Productos extends JFrame {
     private JButton cerrar_sesionBTN;
 
     String header[] = {"ID","Nombre","Ciudad","Precio","Cantidad"}; // NOMBRE DE LAS COLUMNAS DE LA TABLA
+    PreparedStatement pst;
+    ResultSet rs;
+    Connection con;
+    ResultSetMetaData rsmd;
+
 
     public Crud_Productos () {
         setContentPane(Crud_Panel);
@@ -101,9 +106,8 @@ public class Crud_Productos extends JFrame {
 
         try {
 
-            Conexion conexion = new Conexion();
-            Connection con = conexion.getConexion();
-            PreparedStatement pst = con.prepareStatement("INSERT INTO productos (pnombre,pciudad,pprecio,pcantidad) VALUES (?,?,?,?)");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/mitienda?serverTimezone=UTC","root","");
+            pst = con.prepareStatement("INSERT INTO productos (pnombre,pciudad,pprecio,pcantidad) VALUES (?,?,?,?)");
 
             pst.setString(1,nombre);
             pst.setString(2,ciudad);
@@ -115,11 +119,19 @@ public class Crud_Productos extends JFrame {
             Limpiar();
             cargarTabla();
 
-        } catch (SQLException exception) {
+        } catch (Exception e) {
 
-            JOptionPane.showMessageDialog(null, exception.toString());
+            JOptionPane.showMessageDialog(null, e.toString());
             JOptionPane.showMessageDialog(null, "Error al guardar producto","Error Producto",JOptionPane.PLAIN_MESSAGE, icono("/images/error.png",64,64));
             Limpiar();
+        } finally {
+            try {
+                pst.close();
+                rs.close();
+                con.close();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error");
+            }
         }
     }
 
@@ -136,9 +148,6 @@ public class Crud_Productos extends JFrame {
         DefaultTableModel model = (DefaultTableModel) productos_table.getModel(); // casteo
         model.setRowCount(0); // limpiar tabla
 
-        PreparedStatement pst;
-        ResultSet rs;
-        ResultSetMetaData rsmd;
         int columnas;
 
         int[] anchos = {10,100,50,20,20};
@@ -147,8 +156,7 @@ public class Crud_Productos extends JFrame {
         }
 
         try{
-            Conexion conexion = new Conexion();
-            Connection con = conexion.getConexion();
+            con = DriverManager.getConnection("jdbc:mysql://localhost/mitienda?serverTimezone=UTC","root","");
             pst = con.prepareStatement("SELECT * from productos");
 
             rs = pst.executeQuery();
@@ -164,25 +172,29 @@ public class Crud_Productos extends JFrame {
                 model.addRow(fila);
             }
 
-        }catch (SQLException e) {
+        }catch (Exception e) {
             JOptionPane.showMessageDialog(null, e.toString());
             JOptionPane.showMessageDialog(null,"Error al cargar tabla","Error Tabla",JOptionPane.PLAIN_MESSAGE, icono("/images/error.png",64,64));
+        } finally {
+            try {
+                pst.close();
+                rs.close();
+                con.close();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error");
+            }
         }
 
     }
 
     public void interaccionTabla() {
         try{
-
-            PreparedStatement pst;
-            ResultSet rs;
+            con = DriverManager.getConnection("jdbc:mysql://localhost/mitienda?serverTimezone=UTC","root","");
 
             int fila = productos_table.getSelectedRow();
             int id = Integer.parseInt(productos_table.getValueAt(fila,0).toString());
-            Conexion conexion = new Conexion();
-            Connection con = conexion.getConexion();
-            pst = con.prepareStatement("SELECT * from productos where pid = ?");
 
+            pst = con.prepareStatement("SELECT * from productos where pid = ?");
             pst.setInt(1,id);
             rs = pst.executeQuery();
 
@@ -195,10 +207,18 @@ public class Crud_Productos extends JFrame {
             }
 
 
-        }catch (SQLException exception){
-            JOptionPane.showMessageDialog(null,exception.toString());
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null,e.toString());
             JOptionPane.showMessageDialog(null,"Error seleccion de la tabla","Error de seleccion",JOptionPane.PLAIN_MESSAGE, icono("/images/error.png",64,64));
 
+        } finally {
+            try {
+                pst.close();
+                rs.close();
+                con.close();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error");
+            }
         }
     }
 
@@ -212,9 +232,8 @@ public class Crud_Productos extends JFrame {
 
         try {
 
-            Conexion conexion = new Conexion();
-            Connection con = conexion.getConexion();
-            PreparedStatement pst = con.prepareStatement("UPDATE productos SET pnombre = ?, pciudad = ?, pprecio = ?, pcantidad = ? where pid = ?");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/mitienda?serverTimezone=UTC","root","");
+            pst = con.prepareStatement("UPDATE productos SET pnombre = ?, pciudad = ?, pprecio = ?, pcantidad = ? where pid = ?");
 
             pst.setString(1,nombre);
             pst.setString(2,ciudad);
@@ -227,11 +246,19 @@ public class Crud_Productos extends JFrame {
             Limpiar();
             cargarTabla();
 
-        } catch (SQLException exception) {
+        } catch (Exception e) {
 
-            JOptionPane.showMessageDialog(null, exception.toString());
+            JOptionPane.showMessageDialog(null, e.toString());
             JOptionPane.showMessageDialog(null,"Error al actualizar producto","Error de Actualizacion",JOptionPane.PLAIN_MESSAGE, icono("/images/error.png",64,64));
             Limpiar();
+        } finally {
+            try {
+                pst.close();
+                rs.close();
+                con.close();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error");
+            }
         }
 
     }
@@ -242,9 +269,8 @@ public class Crud_Productos extends JFrame {
 
         try {
 
-            Conexion conexion = new Conexion();
-            Connection con = conexion.getConexion();
-            PreparedStatement pst = con.prepareStatement("DELETE FROM productos where pid =? ");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/mitienda?serverTimezone=UTC","root","");
+            pst= con.prepareStatement("DELETE FROM productos where pid =? ");
 
             pst.setInt(1,id);
             pst.executeUpdate();
@@ -253,11 +279,19 @@ public class Crud_Productos extends JFrame {
             Limpiar();
             cargarTabla();
 
-        } catch (SQLException exception) {
+        } catch (Exception e) {
 
-            JOptionPane.showMessageDialog(null, exception.toString());
+            JOptionPane.showMessageDialog(null, e.toString());
             JOptionPane.showMessageDialog(null,"Error al eliminar producto","Error al eliminar",JOptionPane.PLAIN_MESSAGE, icono("/images/error.png",64,64));
             Limpiar();
+        } finally {
+            try {
+                pst.close();
+                rs.close();
+                con.close();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Error");
+            }
         }
     }
 
