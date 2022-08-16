@@ -114,7 +114,7 @@ public class Crud_Productos extends JFrame {
 
         try {
 
-            con = DriverManager.getConnection("jdbc:mysql://localhost/mitienda?serverTimezone=UTC","root","");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/crud_java?serverTimezone=UTC","root","");
             pst = con.prepareStatement("INSERT INTO productos (pnombre,pciudad,pprecio,pcantidad) VALUES (?,?,?,?)");
 
             pst.setString(1,nombre);
@@ -164,7 +164,7 @@ public class Crud_Productos extends JFrame {
         }
 
         try{
-            con = DriverManager.getConnection("jdbc:mysql://localhost/mitienda?serverTimezone=UTC","root","");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/crud_java?serverTimezone=UTC","root","");
             pst = con.prepareStatement("SELECT * from productos");
 
             rs = pst.executeQuery();
@@ -197,7 +197,7 @@ public class Crud_Productos extends JFrame {
 
     public void interaccionTabla() {
         try{
-            con = DriverManager.getConnection("jdbc:mysql://localhost/mitienda?serverTimezone=UTC","root","");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/crud_java?serverTimezone=UTC","root","");
 
             int fila = productos_table.getSelectedRow();
             int id = Integer.parseInt(productos_table.getValueAt(fila,0).toString());
@@ -240,7 +240,7 @@ public class Crud_Productos extends JFrame {
 
         try {
 
-            con = DriverManager.getConnection("jdbc:mysql://localhost/mitienda?serverTimezone=UTC","root","");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/crud_java?serverTimezone=UTC","root","");
             pst = con.prepareStatement("UPDATE productos SET pnombre = ?, pciudad = ?, pprecio = ?, pcantidad = ? where pid = ?");
 
             pst.setString(1,nombre);
@@ -277,7 +277,7 @@ public class Crud_Productos extends JFrame {
 
         try {
 
-            con = DriverManager.getConnection("jdbc:mysql://localhost/mitienda?serverTimezone=UTC","root","");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/crud_java?serverTimezone=UTC","root","");
             pst= con.prepareStatement("DELETE FROM productos where pid =? ");
 
             pst.setInt(1,id);

@@ -21,7 +21,7 @@ public class SQL_usuarios {
         String sql = "insert into usuarios (nom_usuario,apel_usuario,mail_usuario,cell_usuario,password_usuario,confirm_password_usuario)values (?,?,?,?,?,?)";
 
         try {
-            con = DriverManager.getConnection("jdbc:mysql://localhost/mitienda?serverTimezone=UTC","root","");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/crud_java?serverTimezone=UTC","root","");
             pst = con.prepareStatement(sql);
             pst.setString(1,usr.getNombre());
             pst.setString(2,usr.getApellido());
@@ -55,7 +55,7 @@ public class SQL_usuarios {
         String sql = "SELECT count(mail_usuario) FROM usuarios WHERE mail_usuario = ?";
 
         try {
-            con = DriverManager.getConnection("jdbc:mysql://localhost/mitienda?serverTimezone=UTC","root","");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/crud_java?serverTimezone=UTC","root","");
             pst = con.prepareStatement(sql);
             pst.setString(1, email);
             rs = pst.executeQuery();
@@ -97,7 +97,7 @@ public class SQL_usuarios {
 
         try {
 
-            con = DriverManager.getConnection("jdbc:mysql://localhost/mitienda?serverTimezone=UTC","root","");
+            con = DriverManager.getConnection("jdbc:mysql://localhost/crud_java?serverTimezone=UTC","root","");
             pst = con.prepareStatement(sql);
             pst.setString(1, usr.getEmail());
             rs = pst.executeQuery();
