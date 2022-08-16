@@ -1,6 +1,7 @@
 package Formularios;
 
 import javax.swing.*;
+import java.awt.*;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -34,7 +35,8 @@ public class SQL_usuarios {
 
         } catch (Exception e) {
             Logger.getLogger(SQL_usuarios.class.getName()).log(Level.SEVERE,null,e);
-            JOptionPane.showMessageDialog(null, "Error");
+            JOptionPane.showMessageDialog(null, "Error conexion con Base de Datos","Error Base de datos",JOptionPane.PLAIN_MESSAGE, icono("/images/error.png",64,64));
+
             return false;
         } finally {
             try {
@@ -42,7 +44,8 @@ public class SQL_usuarios {
                 rs.close();
                 con.close();
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Error");
+                JOptionPane.showMessageDialog(null, "Error en cerrar la conexion con la base de datos","Error Base de datos",JOptionPane.PLAIN_MESSAGE, icono("/images/error.png",64,64));
+
             }
         }
     }
@@ -67,7 +70,8 @@ public class SQL_usuarios {
 
         } catch (Exception e) {
             Logger.getLogger(SQL_usuarios.class.getName()).log(Level.SEVERE,null,e);
-            JOptionPane.showMessageDialog(null, "Error");
+            JOptionPane.showMessageDialog(null, "Error al conectar con la Base de Datos","Error Base de datos",JOptionPane.PLAIN_MESSAGE, icono("/images/error.png",64,64));
+
             return 1;
         } finally {
             try {
@@ -75,7 +79,8 @@ public class SQL_usuarios {
                 rs.close();
                 con.close();
             } catch (Exception exception) {
-                JOptionPane.showMessageDialog(null, "Error");
+                JOptionPane.showMessageDialog(null, "Error al cerrar la conexion","Error Base de datos",JOptionPane.PLAIN_MESSAGE, icono("/images/error.png",64,64));
+
             }
         }
     }
@@ -114,7 +119,8 @@ public class SQL_usuarios {
 
         } catch (Exception e) {
             Logger.getLogger(SQL_usuarios.class.getName()).log(Level.SEVERE,null,e);
-            JOptionPane.showMessageDialog(null, "Error");
+            JOptionPane.showMessageDialog(null, "Error conexion con Base de Datos","Error Base de datos",JOptionPane.PLAIN_MESSAGE, icono("/images/error.png",64,64));
+
             return false;
         } finally {
             try {
@@ -122,9 +128,16 @@ public class SQL_usuarios {
                 rs.close();
                 con.close();
             } catch (Exception exception) {
-                JOptionPane.showMessageDialog(null, "Error");
+                JOptionPane.showMessageDialog(null, "Error cerrar la conexion","Error",JOptionPane.PLAIN_MESSAGE, icono("/images/error.png",64,64));
+
             }
         }
+    }
+
+    public Icon icono (String path, int widht, int height) {
+
+        Icon img = new ImageIcon(new ImageIcon(getClass().getResource(path)).getImage().getScaledInstance(widht,height, Image.SCALE_SMOOTH));
+        return img;
     }
 
 }

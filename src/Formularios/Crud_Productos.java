@@ -39,7 +39,7 @@ public class Crud_Productos extends JFrame {
         setContentPane(Crud_Panel);
         setTitle("Productos");
         setSize(800,500);
-        setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setVisible(true);
         setLocationRelativeTo(null); // centrar la pantalla
         idTF.setEnabled(false);
@@ -138,7 +138,7 @@ public class Crud_Productos extends JFrame {
                 rs.close();
                 con.close();
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Error");
+                JOptionPane.showMessageDialog(null, "Error","Error",JOptionPane.PLAIN_MESSAGE, icono("/images/error.png",64,64));
             }
         }
     }
@@ -189,7 +189,8 @@ public class Crud_Productos extends JFrame {
                 rs.close();
                 con.close();
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Error");
+                JOptionPane.showMessageDialog(null, "Error cerrar conexion con Base de Datos","Error Base de datos",JOptionPane.PLAIN_MESSAGE, icono("/images/error.png",64,64));
+
             }
         }
 
@@ -225,7 +226,7 @@ public class Crud_Productos extends JFrame {
                 rs.close();
                 con.close();
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Error");
+                JOptionPane.showMessageDialog(null, "Error cerrar conexion con Base de Datos","Error Base de datos",JOptionPane.PLAIN_MESSAGE, icono("/images/error.png",64,64));
             }
         }
     }
@@ -265,7 +266,7 @@ public class Crud_Productos extends JFrame {
                 rs.close();
                 con.close();
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, "Error");
+                JOptionPane.showMessageDialog(null, "Error cerrar conexion con Base de Datos","Error Base de datos",JOptionPane.PLAIN_MESSAGE, icono("/images/error.png",64,64));
             }
         }
 
