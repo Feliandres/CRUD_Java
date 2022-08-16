@@ -12,6 +12,8 @@ public class SQL_usuarios {
     PreparedStatement pst;
     ResultSet rs;
     Connection con;
+
+    // FUNCION PARA REGISTRAR USUARIOS
     public boolean registrar(Usuarios usr) {
 
         pst = null;
@@ -45,6 +47,7 @@ public class SQL_usuarios {
         }
     }
 
+    // FUNCION PARA VERIFICAR SI UN USUARIO EXISTE EN LA BASE DE DATOS
     public int existenciaUsuario(String email) {
 
         pst = null;
@@ -77,6 +80,7 @@ public class SQL_usuarios {
         }
     }
 
+    // FUNCION PARA COMPROBAR LA EL FORMATO DEL EMAIL
     public boolean esEmail(String email) {
         // Patron para validar el email
         Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
@@ -84,6 +88,7 @@ public class SQL_usuarios {
         return mather.find();
     }
 
+    // FUNCION PARA QUE LOS USUARIOS PUEDAN LOGUEARSE
     public boolean iniciarSesion(Usuarios usr) {
 
         pst = null;

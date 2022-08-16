@@ -24,7 +24,10 @@ public class Crud_Productos extends JFrame {
     private JLabel tituloTxt;
     private JButton cerrar_sesionBTN;
 
-    String header[] = {"ID","Nombre","Ciudad","Precio","Cantidad"}; // NOMBRE DE LAS COLUMNAS DE LA TABLA
+    // NOMBRE DE LAS COLUMNAS DE LA TABLA
+    String header[] = {"ID","Nombre","Ciudad","Precio","Cantidad"};
+
+    // DECLARAR VARIABLES PARA CONEXION Y USO BASE DE DATOS
     PreparedStatement pst;
     ResultSet rs;
     Connection con;
@@ -32,6 +35,7 @@ public class Crud_Productos extends JFrame {
 
 
     public Crud_Productos () {
+
         setContentPane(Crud_Panel);
         setTitle("Productos");
         setSize(800,500);
@@ -39,8 +43,9 @@ public class Crud_Productos extends JFrame {
         setVisible(true);
         setLocationRelativeTo(null); // centrar la pantalla
         idTF.setEnabled(false);
-        cargarTabla();
+        cargarTabla(); // carga el contenido de la tabla
 
+        // FUNCION BOTON GUARDAR
         guardarBTN.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -48,6 +53,7 @@ public class Crud_Productos extends JFrame {
             }
         });
 
+        // FUNCION DE LA JTABLE
         productos_table.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
@@ -56,24 +62,31 @@ public class Crud_Productos extends JFrame {
             }
         });
 
+        // FUNCION BOTON MODIFICAR
         modificatBTN.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Actualizar();
             }
         });
+
+        // FUNCION BOTON ELIMINAR
         eliminarBTN.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Eliminar();
             }
         });
+
+        // FUNCION BOTON LIMPIAR
         limpiarBTN.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 Limpiar();
             }
         });
+
+        // FUNCION BOTON SALIR
         cerrar_sesionBTN.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -84,12 +97,7 @@ public class Crud_Productos extends JFrame {
         });
     }
 
-    public static void main(String[] args) {
-        //Crud_Productos crud_productos = new Crud_Productos();
-
-    }
-
-
+    // FUNCION QUE CREA EL NOMBRE DE LAS COLUMNAS DE LA JTABLE
     private void createUIComponents () {
         // TODO: place custom component creation code here
         DefaultTableModel model = new DefaultTableModel(0,5);
@@ -295,10 +303,17 @@ public class Crud_Productos extends JFrame {
         }
     }
 
+    // CAMBIAR ICONO DE JOPTIONPANE
     public Icon icono (String path, int widht, int height) {
 
         Icon img = new ImageIcon(new ImageIcon(getClass().getResource(path)).getImage().getScaledInstance(widht,height, Image.SCALE_SMOOTH));
         return img;
+    }
+
+    // MAIN
+    public static void main(String[] args) {
+        //Crud_Productos crud_productos = new Crud_Productos();
+
     }
 
 }

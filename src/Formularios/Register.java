@@ -26,6 +26,7 @@ public class Register extends JFrame {
     private JPasswordField reg_confirm_passwordTF;
 
     public Register () {
+
         setContentPane(Main_Register);
         setTitle("Register");
         setSize(400,400);

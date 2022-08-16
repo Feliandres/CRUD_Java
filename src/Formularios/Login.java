@@ -28,6 +28,7 @@ public class Login extends JFrame{
 
 
     public Login () {
+
         setContentPane(Main_Login);
         setTitle("Login");
         setSize(460,560);
